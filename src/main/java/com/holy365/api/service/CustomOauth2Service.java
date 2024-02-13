@@ -1,0 +1,64 @@
+package com.holy365.api.service;
+
+import com.holy365.api.domain.CustomOAuth2User;
+import com.holy365.api.domain.User;
+import com.holy365.api.repository.user.UserRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Service;
+
+import java.util.Map;
+import java.util.Optional;
+
+
+@Slf4j
+@Service
+@RequiredArgsConstructor
+public class CustomOauth2Service extends DefaultOAuth2UserService {
+
+  private final UserRepository userRepository;
+
+//  @Override
+//  public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+//    OAuth2User oAuth2User =  super.loadUser(userRequest);
+//    Map<String, Object> attributes = oAuth2User.getAttributes();
+//    String authString = userRequest.getClientRegistration().getRegistrationId();
+//    AuthenticationType auth = AuthenticationType.valueOf(authString.toUpperCase());
+//
+//    String email = null;
+//    String name = null;
+//
+//    if(auth == AuthenticationType.GOOGLE) {
+//      email = (String) attributes.get("email");
+//      name = (String) attributes.get("name");
+//    } else if(auth == AuthenticationType.NAVER) {
+//      Map<String, Object> response = (Map<String, Object>) attributes.get("response");
+//
+//      email = (String) response.get("email");
+//      name = (String) response.get("name");
+//    } else if(auth == AuthenticationType.KAKAO) {
+//      Map<String, Object> kakao_account = (Map<String, Object>) attributes.get("kakao_account");
+//      Map<String, Object> properties = (Map<String, Object>) attributes.get("properties");
+//
+//      email = (String) kakao_account.get("email");
+//      name = (String) properties.get("nickname");
+//    }
+//
+//    Optional<User> user = userRepository.findByEmail(email);
+//
+//    if (user.isEmpty()) {
+//      User UserEntity = User.builder()
+//        .email(email)
+//        .name(name)
+//        .authType(auth)
+//        .build();
+//      userRepository.save(UserEntity);
+//    }
+//
+//    return new CustomOAuth2User(oAuth2User, email);
+//  }
+}
