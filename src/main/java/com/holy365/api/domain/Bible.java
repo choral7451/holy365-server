@@ -17,7 +17,12 @@ public class Bible {
 
   @Enumerated(EnumType.STRING)
   private BibleCategory category;
-  private String title;
+
+  @Column(name = "ko_title")
+  private String koTitle;
+
+  @Column(name = "en_title")
+  private String enTitle;
   private Integer chapter;
   private Integer verse;
   private String contents;
