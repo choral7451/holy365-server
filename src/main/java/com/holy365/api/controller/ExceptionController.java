@@ -1,7 +1,7 @@
 package com.holy365.api.controller;
 
-import com.holy365.api.exception.ArtinfoException;
-import com.holy365.api.response.ErrorResponse;
+import com.holy365.api.exception.Holy365Exception;
+import com.holy365.api.dto.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -30,8 +30,8 @@ public class ExceptionController {
     }
 
     @ResponseBody
-    @ExceptionHandler(ArtinfoException.class)
-    public ResponseEntity<ErrorResponse> artinfoException(ArtinfoException e) {
+    @ExceptionHandler(Holy365Exception.class)
+    public ResponseEntity<ErrorResponse> artinfoException(Holy365Exception e) {
         int statusCode = e.getStatusCode();
 
         ErrorResponse body = ErrorResponse.builder()

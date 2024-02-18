@@ -1,6 +1,6 @@
 package com.holy365.api.config.handler;
 
-import com.holy365.api.response.ErrorResponse;
+import com.holy365.api.dto.response.ErrorResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

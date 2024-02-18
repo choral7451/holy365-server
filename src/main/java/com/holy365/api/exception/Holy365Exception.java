@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Getter
-public abstract class ArtinfoException extends RuntimeException {
+public abstract class Holy365Exception extends RuntimeException {
   public final Map<String, String> validation = new HashMap<>();
 
-  public ArtinfoException(String message) {
+  public Holy365Exception(String message) {
     super(message);
   }
 
-  public ArtinfoException(String message, Throwable cause) {
+  public Holy365Exception(String message, Throwable cause) {
     super(message, cause);
   }
 

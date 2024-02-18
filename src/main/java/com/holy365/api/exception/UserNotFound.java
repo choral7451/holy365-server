@@ -1,6 +1,6 @@
 package com.holy365.api.exception;
 
-public class UserNotFound extends ArtinfoException {
+public class UserNotFound extends Holy365Exception {
   private static final String MESSAGE = "존재하지 않는 유저입니다.";
 
   public UserNotFound() {

@@ -1,9 +1,8 @@
 package com.holy365.api.service;
 
-import com.holy365.api.domain.Bible;
 import com.holy365.api.repository.user.BibleRepository;
-import com.holy365.api.response.BibleTitleResponse;
-import com.holy365.api.response.VerseResponse;
+import com.holy365.api.dto.response.BibleTitleResponse;
+import com.holy365.api.dto.response.VerseResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

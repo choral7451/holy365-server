@@ -1,11 +1,11 @@
 package com.holy365.api.domain;
 
+import com.holy365.api.domain.enums.AuthType;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,14 +14,24 @@ import java.util.UUID;
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private UUID id;
+  private Long id;
 
   @Column(name = "name")
   private String name;
 
+  @Column(name = "nickname")
+  private String nickname;
+
   @Column(name = "email")
   private String email;
 
-  @Column(name = "password")
-  private String password;
+  @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
+  private Auth auth;
+
+  @Builder
+  public User(String name, String nickname, String email) {
+    this.name = name;
+    this.nickname = nickname;
+    this.email = email;
+  }
 }

@@ -1,7 +1,7 @@
 package com.holy365.api.controller;
 
-import com.holy365.api.response.BibleTitleResponse;
-import com.holy365.api.response.VerseResponse;
+import com.holy365.api.dto.response.BibleTitleResponse;
+import com.holy365.api.dto.response.VerseResponse;
 import com.holy365.api.service.BibleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
