@@ -49,7 +49,7 @@ public class AuthService {
   }
 
   public String login(LoginCreator loginCreator) {
-    Auth auth = authRepository.findByIdentity(loginCreator.getLoginId())
+    Auth auth = authRepository.findByIdentity(loginCreator.getEmail())
       .orElseThrow(LoginException::new);
 
     boolean matchResult = passwordEncoder.matches(loginCreator.getPassword(), auth.getPassword());

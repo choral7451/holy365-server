@@ -8,4 +8,5 @@ import lombok.Getter;
 public class BibleTitleResponse {
   private String enTitle;
   private String koTitle;
+  private Boolean isCompleted;
 }

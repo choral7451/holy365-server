@@ -4,8 +4,9 @@ import com.holy365.api.dto.EmailSignupCreator;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 @Builder
 public class Signup {
   @NotBlank(message = "사용자 닉네임을 입력해 주세요.")

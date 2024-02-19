@@ -40,12 +40,10 @@ public class SecurityConfig {
             )
       )
       .authorizeHttpRequests(request -> request
+        .requestMatchers("/bible/{title}/{chapter}/verses").authenticated()
         .anyRequest().permitAll()
       )
       .csrf(AbstractHttpConfigurer::disable)
-      .sessionManagement(sessionManagement ->
-        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-      )
       .addFilterBefore(new JwtFilter(secretKey), UsernamePasswordAuthenticationFilter.class)
       .exceptionHandling(e -> {
         e.authenticationEntryPoint(new Http401Handler(objectMapper));

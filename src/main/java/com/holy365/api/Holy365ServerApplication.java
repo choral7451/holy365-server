@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 
 @EnableJpaAuditing
-@SpringBootApplication()
+@SpringBootApplication
 public class Holy365ServerApplication {
 
 	public static void main(String[] args) {

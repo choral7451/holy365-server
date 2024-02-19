@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class LoginCreator {
-  private String email;
-  private String password;
+public class CompleteBibleTitleCreator {
+  private Long userId;
+  private String koTitle;
 }

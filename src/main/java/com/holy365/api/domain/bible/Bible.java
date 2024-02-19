@@ -1,4 +1,4 @@
-package com.holy365.api.domain;
+package com.holy365.api.domain.bible;
 
 import com.holy365.api.domain.enums.BibleCategory;
 import jakarta.persistence.*;

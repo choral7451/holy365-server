@@ -9,14 +9,14 @@ import lombok.Getter;
 @Builder
 public class Login {
   @NotBlank(message = "사용자 아이디를 입력해 주세요.")
-  private String userId;
+  private String email;
 
   @NotBlank(message = "사용자 패스워드를 입력해 주세요.")
   private String password;
 
   public LoginCreator toCreator() {
     return LoginCreator.builder()
-      .loginId(this.userId)
+      .email(this.email)
       .password(this.password)
       .build();
   }

@@ -1,11 +1,17 @@
 package com.holy365.api.domain;
 
+import com.holy365.api.domain.bible.BibleStatusTitle;
 import com.holy365.api.domain.enums.AuthType;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,14 +25,25 @@ public class User {
   @Column(name = "name")
   private String name;
 
-  @Column(name = "nickname")
+  @Column(name = "nickname", unique=true)
   private String nickname;
 
-  @Column(name = "email")
+  @Column(name = "email", unique=true)
   private String email;
 
   @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
   private Auth auth;
+
+  @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+  private List<BibleStatusTitle> bibleStatusTitles;
+
+  @LastModifiedDate
+  @Column(name = "updated_at")
+  private LocalDateTime updatedAt;
+
+  @CreatedDate
+  @Column(name = "created_at")
+  private LocalDateTime createdAt;
 
   @Builder
   public User(String name, String nickname, String email) {
