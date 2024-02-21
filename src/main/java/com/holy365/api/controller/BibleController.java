@@ -26,7 +26,7 @@ public class BibleController {
     if (authentication != null) {
       userId = (Long) authentication.getPrincipal();
     }
-    return bibleService.getTitles();
+    return bibleService.getTitles(userId);
   }
 
   @GetMapping("/bible/{title}/count")

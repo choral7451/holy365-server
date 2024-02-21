@@ -28,17 +28,34 @@ public class BibleService {
   private final BibleStatusTitleRepository bibleStatusTitleRepository;
 
   public List<BibleTitleResponse> getTitles(Long userId) {
-    List<BibleStatusTitle> completedTitles = new ArrayList<>();
+    List<BibleStatusTitle> completedTitles;
     if(userId != null) {
       completedTitles = bibleStatusTitleRepository.findAllByUser_Id(userId);
+    } else {
+      completedTitles = new ArrayList<>();
     }
 
+
     return bibleRepository.findDistinctTitles().stream()
-      .map(titles -> BibleTitleResponse.builder()
-        .koTitle((String) titles[0])
-        .enTitle((String) titles[1])
-        .build())
+      .map(titles -> {
+        String koTitle = (String) titles[0];
+        Boolean isCompleted = isCompletedTitle(completedTitles, koTitle);
+
+        return BibleTitleResponse.builder()
+          .koTitle(koTitle)
+          .enTitle((String) titles[1])
+          .isCompleted(isCompleted)
+          .build();
+      })
       .toList();
+  }
+
+  private Boolean isCompletedTitle(List<BibleStatusTitle> completedTitles, String title) {
+    for (BibleStatusTitle completedTitle : completedTitles) {
+      if(completedTitle.getTitle().equals(title)) return true;
+    }
+
+    return false;
   }
 
   public Integer countByEnTitle(String enTitle) {
