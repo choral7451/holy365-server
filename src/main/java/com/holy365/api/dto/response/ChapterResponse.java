@@ -5,8 +5,7 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class VerseResponse {
-  private Integer verse;
-  private String text;
+public class ChapterResponse {
+  private Integer chapter;
   private Boolean isCompleted;
 }

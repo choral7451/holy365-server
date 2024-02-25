@@ -10,10 +10,12 @@ import java.util.Optional;
 
 public interface BibleRepository extends JpaRepository<Bible, Integer> {
 
-  @Query("SELECT DISTINCT b.koTitle, b.enTitle FROM Bible b")
+  @Query("SELECT DISTINCT b.koTitle, b.enTitle, b.category FROM Bible b")
   List<Object[]> findDistinctTitles();
 
   Boolean existsBibleByKoTitle(String koTitle);
+
+  Boolean existsBibleByEnTitleAndChapterAndVerse(String enTitle, Integer chapter, Integer verse);
 
   @Query("SELECT COUNT(DISTINCT b.chapter) FROM Bible b WHERE b.enTitle = :enTitle")
   Integer countDistinctChaptersByEnTitle(@Param("enTitle") String enTitle);

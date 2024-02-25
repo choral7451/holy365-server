@@ -1,7 +1,8 @@
 package com.holy365.api.domain;
 
+import com.holy365.api.domain.bible.BibleStatusChapter;
 import com.holy365.api.domain.bible.BibleStatusTitle;
-import com.holy365.api.domain.enums.AuthType;
+import com.holy365.api.domain.bible.BibleStatusVerse;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -36,6 +37,12 @@ public class User {
 
   @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
   private List<BibleStatusTitle> bibleStatusTitles;
+
+  @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+  private List<BibleStatusChapter> bibleStatusChapters;
+
+  @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+  private List<BibleStatusVerse> bibleStatusVerses;
 
   @LastModifiedDate
   @Column(name = "updated_at")

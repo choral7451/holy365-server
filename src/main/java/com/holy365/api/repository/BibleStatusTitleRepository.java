@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface BibleStatusTitleRepository extends JpaRepository<BibleStatusTitle, Integer> {
+public interface BibleStatusTitleRepository extends JpaRepository<BibleStatusTitle, Long> {
 
   List<BibleStatusTitle> findAllByUser_Id(Long userId);
 
