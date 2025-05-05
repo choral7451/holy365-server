@@ -17,10 +17,14 @@ public class ApiResponse<T> {
 
 	private ExceptionMessage exception;
 
-	private T data;
+	private T item;
 
 	public static <T> ApiResponse<T> success(T data) {
 		return new ApiResponse<>(ApiResultType.SUCCESS, null, data);
+	}
+
+	public static <T> ApiResponse<T> success() {
+		return new ApiResponse<>(ApiResultType.SUCCESS, null, null);
 	}
 
 	public static <T> ApiResponse<T> fail(ApiErrorType errorType) {
@@ -30,6 +34,6 @@ public class ApiResponse<T> {
 	public ApiResponse(ApiResultType resultType, ExceptionMessage exception, T data) {
 		this.type = resultType;
 		this.exception = exception;
-		this.data = data;
+		this.item = data;
 	}
 }
