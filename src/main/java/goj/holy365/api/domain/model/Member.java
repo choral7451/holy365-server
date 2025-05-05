@@ -11,4 +11,17 @@ public record Member(
 	LocalDateTime updatedAt,
 	LocalDateTime deletedAt
 ) {
+
+	public Member(String name, String email, String password) {
+
+		this(
+			null,
+			name,
+			email,
+			password,
+			LocalDateTime.now(),
+			LocalDateTime.now(),
+			null
+		);
+	}
 }
