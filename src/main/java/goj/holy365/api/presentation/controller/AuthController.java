@@ -1,4 +1,4 @@
-package goj.holy365.api.interfaces.controller;
+package goj.holy365.api.presentation.controller;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import goj.holy365.api.application.facade.AuthFacade;
-import goj.holy365.api.interfaces.controller.dto.in.SignUpRequest;
+import goj.holy365.api.presentation.controller.dto.in.SignUpRequest;
 import goj.holy365.common.dto.response.ApiResponse;
 import goj.holy365.common.dto.response.LongIdResponse;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,4 +1,4 @@
-package goj.holy365.api.interfaces.controller.dto.in;
+package goj.holy365.api.presentation.controller.dto.in;
 
 import goj.holy365.api.application.facade.dto.in.SignUpFacadeDto;
 import io.swagger.v3.oas.annotations.media.Schema;

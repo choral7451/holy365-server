@@ -1,4 +1,4 @@
-package goj.holy365.api.interfaces.controller;
+package goj.holy365.api.presentation.controller;
 
 import java.util.List;
 
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import goj.holy365.api.application.facade.BibleFacade;
-import goj.holy365.api.interfaces.controller.dto.in.ScanBibleBooksRequest;
-import goj.holy365.api.interfaces.controller.dto.in.ScanBibleChaptersRequest;
-import goj.holy365.api.interfaces.controller.dto.in.ScanBibleVersesRequest;
-import goj.holy365.api.interfaces.controller.dto.out.BibleBookResponse;
-import goj.holy365.api.interfaces.controller.dto.out.BibleVerseResponse;
+import goj.holy365.api.presentation.controller.dto.in.ScanBibleBooksRequest;
+import goj.holy365.api.presentation.controller.dto.in.ScanBibleChaptersRequest;
+import goj.holy365.api.presentation.controller.dto.in.ScanBibleVersesRequest;
+import goj.holy365.api.presentation.controller.dto.out.BibleBookResponse;
+import goj.holy365.api.presentation.controller.dto.out.BibleVerseResponse;
 import goj.holy365.common.dto.response.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
